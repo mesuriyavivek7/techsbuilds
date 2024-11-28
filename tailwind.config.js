@@ -4,7 +4,16 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        roboto: ['Nunito Sans', 'serif'], // Add Google Font here
+      },
+      colors:{
+        darkblue:"#141d38",
+        bluelight:"#43baff",
+        purple:"#7141b1"
+      }
+    },
   },
   plugins: [],
 }
