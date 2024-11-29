@@ -22,7 +22,7 @@ export default function Navbar() {
   return (
     <header className="relative z-50">
       {/* Top Section */}
-      <div className="hidden md:flex bg-darkblue text-gray-300 justify-between items-center px-6 py-2">
+      <div className="hidden md:flex bg-darkblue text-gray-300 justify-between items-center px-8 py-2">
         <div className="flex items-center gap-4">
           <FacebookOutlinedIcon className="hover:text-white cursor-pointer" />
           <InstagramIcon className="hover:text-white cursor-pointer" />
@@ -47,7 +47,7 @@ export default function Navbar() {
       </div>
 
       {/* Navbar Section */}
-      <div className="flex items-center justify-between px-6 py-4 bg-white shadow-md">
+      <div className="flex items-center justify-between md:px-8 px-6 py-4 bg-white shadow-md">
         <div className="text-2xl font-bold text-darkblue cursor-pointer">
           TechsBuilds
         </div>
@@ -56,7 +56,7 @@ export default function Navbar() {
         <button
           onClick={toggleMenu}
           className={`${
-            isMenuOpen ? "absolute z-10 text-white top-2 right-2" : "text-2xl"
+            isMenuOpen ? "absolute z-10 text-white top-3 right-2" : "text-2xl"
           } md:hidden`} 
         >
           {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
@@ -67,7 +67,7 @@ export default function Navbar() {
           <div
             onClick={() => navigate("/")}
             className={`cursor-pointer font-medium ${
-              isActive("/") ? "text-bluelight border-b-2 border-bluelight" : ""
+              isActive("/") && "text-bluelight border-b-2 border-bluelight" 
             } hover:text-bluelight`}
           >
             Home
@@ -75,9 +75,7 @@ export default function Navbar() {
           <div
             onClick={() => navigate("/company")}
             className={`cursor-pointer font-medium ${
-              isActive("/company")
-                ? "text-bluelight border-b-2 border-bluelight"
-                : ""
+              isActive("/company") && "text-bluelight border-b-2 border-bluelight"
             } hover:text-bluelight`}
           >
             Services
@@ -85,9 +83,7 @@ export default function Navbar() {
           <div
             onClick={() => navigate("/about-us")}
             className={`cursor-pointer font-medium ${
-              isActive("/about-us")
-                ? "text-bluelight border-b-2 border-bluelight"
-                : ""
+              isActive("/about-us") &&  "text-bluelight border-b-2 border-bluelight"
             } hover:text-bluelight`}
           >
             About Us
@@ -95,9 +91,7 @@ export default function Navbar() {
           <div
             onClick={() => navigate("/contacts")}
             className={`cursor-pointer font-medium ${
-              isActive("/contacts")
-                ? "text-bluelight border-b-2 border-bluelight"
-                : ""
+              isActive("/contacts") && "text-bluelight border-b-2 border-bluelight"
             } hover:text-bluelight`}
           >
             Contacts
@@ -109,8 +103,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="flex flex-col sm:hidden bg-darkblue text-white absolute top-0 right-0 h-screen w-1/2">
+        <div className={`flex flex-col pt-2 transition-all duration-200 sm:hidden bg-darkblue text-white absolute top-0 ${isMenuOpen?"right-0":"-right-full"} h-screen w-1/2`}>
           <div className="py-2 px-4">
             <div
               onClick={() => {
@@ -169,7 +162,6 @@ export default function Navbar() {
             </button>
           </div>
         </div>
-      )}
     </header>
   );
 }
