@@ -1,63 +1,175 @@
-import React from 'react'
-import { useLocation } from 'react-router-dom';
+import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 
-//importing icons
-import XIcon from '@mui/icons-material/X';
-import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
-import EmailIcon from '@mui/icons-material/Email';
+// Importing icons
+import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+import EmailIcon from "@mui/icons-material/Email";
 
 export default function Navbar() {
-    const location=useLocation()
-    
-    const isActive=(currentPath)=>{
-      return location.pathname===currentPath
-    }
+  const location = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const isActive = (currentPath) => location.pathname === currentPath;
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <div>
-       <div className='md:flex hidden bg-darkblue justify-around items-center'>
-           <div className='flex items-center'>
-               <span className='py-2 px-4 hover:text-white cursor-pointer border-r border-l text-gray-300 border-white'><XIcon style={{fontSize:".9rem"}}></XIcon></span>
-               <span className='py-2 px-4 hover:text-white cursor-pointer border-r text-gray-300 border-white'><FacebookOutlinedIcon style={{fontSize:".9rem"}}></FacebookOutlinedIcon></span>
-               <span className='py-2 px-4 hover:text-white cursor-pointer border-r text-gray-300 border-white'><InstagramIcon style={{fontSize:".9rem"}}></InstagramIcon></span>
-               <span className='py-2 px-4 hover:text-white cursor-pointer border-r text-gray-300 border-white'><LinkedInIcon style={{fontSize:".9rem"}}></LinkedInIcon></span>
-           </div>
-           <div className='flex items-center'>
-               <a href='tel:+917874510328' className='flex py-2 px-4 border-r border-l items-center gap-2'>
-                 <span className='text-white'><LocalPhoneIcon style={{fontSize:".9rem"}}></LocalPhoneIcon></span>
-                 <span className='text-gray-300 text-sm'>+91-7874510328</span>
-               </a>
-               <a href='mailto:techsbuilds.com' className='flex py-2 px-4 border-r items-center gap-2'>
-                 <span className='text-white'><EmailIcon style={{fontSize:'.9rem'}}></EmailIcon></span>
-                 <span className='text-gray-300 text-sm'>techsbuilds@gmail.com</span>
-               </a>
-           </div>
-       </div>
-       <div className="flex h-20 border items-center justify-around">
-             <div>
-               <span className="text-2xl font-bold">TechsBuilds</span>
-             </div>
-            <div className="flex gap-2 h-full">
-                <div className={`${isActive('/') && "border-b-bluelight border-b-2"} hover:border-b-bluelight hover:border-b-2 cursor-pointer h-full px-6 font-bold flex items-center justify-center`}>
-                  Home
-                </div>
-                <div className={`${isActive('/company') && "border-b-bluelight border-b-2"} hover:border-b-bluelight hover:border-b-2 cursor-pointer h-full px-6 font-bold flex items-center justify-center`}>
-                 Services
-                </div>
-                <div className={`${isActive('/services') && "border-b-bluelight border-b-2"} hover:border-b-bluelight hover:border-b-2 cursor-pointer h-full px-6 font-bold flex items-center justify-center`}>
-                  About Us
-                </div>
-                <div className={`${isActive('/contacts') && "border-b-bluelight border-b-2"} hover:border-b-bluelight hover:border-b-2 cursor-pointer h-full px-6 font-bold flex items-center justify-center`}>
-                  Contacts
-                </div>
-             </div>
-             <button className="p-2 transition-all bg-bluelight font-semibold hover:bg-purple text-white rounded-md">
-                Get In Touch
-             </button>
+    <header className="relative z-50">
+      {/* Top Section */}
+      <div className="hidden md:flex bg-darkblue text-gray-300 justify-between items-center px-6 py-2">
+        <div className="flex items-center gap-4">
+          <FacebookOutlinedIcon className="hover:text-white cursor-pointer" />
+          <InstagramIcon className="hover:text-white cursor-pointer" />
+          <LinkedInIcon className="hover:text-white cursor-pointer" />
         </div>
-    </div>
-  )
+        <div className="flex items-center gap-6">
+          <a
+            href="tel:+917874510328"
+            className="flex items-center gap-2 hover:text-white"
+          >
+            <LocalPhoneIcon />
+            <span>+91-7874510328</span>
+          </a>
+          <a
+            href="mailto:techsbuilds@gmail.com"
+            className="flex items-center gap-2 hover:text-white"
+          >
+            <EmailIcon />
+            <span>techsbuilds@gmail.com</span>
+          </a>
+        </div>
+      </div>
+
+      {/* Navbar Section */}
+      <div className="flex items-center justify-between px-6 py-4 bg-white shadow-md">
+        <div className="text-2xl font-bold text-darkblue cursor-pointer">
+          TechsBuilds
+        </div>
+
+        {/* Hamburger Menu */}
+        <button
+          onClick={toggleMenu}
+          className={`${
+            isMenuOpen ? "absolute z-10 text-white top-2 right-2" : "text-2xl"
+          } md:hidden`} 
+        >
+          {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
+        </button>
+
+        {/* Desktop Menu */}
+        <nav className="hidden md:flex items-center gap-8">
+          <div
+            onClick={() => navigate("/")}
+            className={`cursor-pointer font-medium ${
+              isActive("/") ? "text-bluelight border-b-2 border-bluelight" : ""
+            } hover:text-bluelight`}
+          >
+            Home
+          </div>
+          <div
+            onClick={() => navigate("/company")}
+            className={`cursor-pointer font-medium ${
+              isActive("/company")
+                ? "text-bluelight border-b-2 border-bluelight"
+                : ""
+            } hover:text-bluelight`}
+          >
+            Services
+          </div>
+          <div
+            onClick={() => navigate("/about-us")}
+            className={`cursor-pointer font-medium ${
+              isActive("/about-us")
+                ? "text-bluelight border-b-2 border-bluelight"
+                : ""
+            } hover:text-bluelight`}
+          >
+            About Us
+          </div>
+          <div
+            onClick={() => navigate("/contacts")}
+            className={`cursor-pointer font-medium ${
+              isActive("/contacts")
+                ? "text-bluelight border-b-2 border-bluelight"
+                : ""
+            } hover:text-bluelight`}
+          >
+            Contacts
+          </div>
+          <button className="px-6 py-2 text-white bg-bluelight rounded-md shadow hover:bg-purple transition">
+            Get In Touch
+          </button>
+        </nav>
+      </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="flex flex-col sm:hidden bg-darkblue text-white absolute top-0 right-0 h-screen w-1/2">
+          <div className="py-2 px-4">
+            <div
+              onClick={() => {
+                navigate("/");
+                setIsMenuOpen(false);
+              }}
+              className={`${
+                isActive("/") ? "text-bluelight" : ""
+              } hover:text-bluelight cursor-pointer`}
+            >
+              Home
+            </div>
+          </div>
+          <div className="py-2 px-4">
+            <div
+              onClick={() => {
+                navigate("/company");
+                setIsMenuOpen(false);
+              }}
+              className={`${
+                isActive("/company") ? "text-bluelight" : ""
+              } hover:text-bluelight cursor-pointer`}
+            >
+              Services
+            </div>
+          </div>
+          <div className="py-2 px-4">
+            <div
+              onClick={() => {
+                navigate("/about-us");
+                setIsMenuOpen(false);
+              }}
+              className={`${
+                isActive("/about-us") ? "text-bluelight" : ""
+              } hover:text-bluelight cursor-pointer`}
+            >
+              About Us
+            </div>
+          </div>
+          <div className="py-2 px-4">
+            <div
+              onClick={() => {
+                navigate("/contacts");
+                setIsMenuOpen(false);
+              }}
+              className={`${
+                isActive("/contacts") ? "text-bluelight" : ""
+              } hover:text-bluelight cursor-pointer`}
+            >
+              Contacts
+            </div>
+          </div>
+          <div className="py-2 px-4">
+            <button className="p-2 w-full text-center transition-all bg-bluelight font-semibold hover:bg-purple text-white rounded-md">
+              Get In Touch
+            </button>
+          </div>
+        </div>
+      )}
+    </header>
+  );
 }
