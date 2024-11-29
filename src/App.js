@@ -27,9 +27,18 @@ function App() {
         {
           path:'/',
           element:<Home></Home>
+        },{
+          path:'/company',
+          element:<Home></Home>
+        },{
+          path:'/about-us',
+          element:<Home></Home>
+        },{
+          path:'/contacts',
+          element:<Home></Home>
         },
       ]
-    }
+    },
   ])
 
   return (
