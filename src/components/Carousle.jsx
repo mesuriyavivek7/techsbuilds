@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFade, Autoplay } from "swiper/modules"; // Include Autoplay
 import "swiper/css";
@@ -28,19 +29,23 @@ export default function Carousle() {
             className="w-full object-cover h-full"
           />
 
-          <div className="md:text-[5rem] text-3xl absolute z-30 top-1/4 md:top-[8rem] left-10 md:left-20 flex flex-col text-white gap-4">
-            <span className="sm:text-lg md:text-2xl tracking-wider">
+          <div className="absolute z-30 md:top-40 top-10 left-8 md:left-20 flex flex-col text-white gap-2 md:gap-4">
+            <motion.span
+              initial={{ opacity: 0, y: 20 }} // Start hidden and slightly below
+              animate={{ opacity: 1, y: 0 }} // Fade in and slide up
+              transition={{ duration: 0.5 }} // Control the speed
+              className="md:text-2xl text-xl tracking-wider"
+            >
               # Full Cycle Development
-            </span>
-            <h1 className="text-3xl leading-[2.5rem] tracking-wide font-archivo md:text-[5rem] md:leading-[5rem]">
+            </motion.span>
+            <h1 className="md:text-7xl text-3xl leading-[2.5rem] md:leading-[5rem] tracking-wide font-archivo">
               FROM IDEA <br /> TO PRODUCT
             </h1>
-
-            <p className="text-sm md:text-xl">
+            <p className="text-sm w-72 md:w-auto md:text-xl">
               We are 100+ professional software engineers with more than 10
               years of experience.
             </p>
-            <button className="px-4 py-2 hover:bg-purple transition-all text-white text-sm md:text-lg bg-bluelight w-32 md:w-36 mt-2">
+            <button className="px-4 py-2 hover:bg-purple transition-all text-white text-sm md:text-lg bg-bluelight w-32 md:w-36 md:mt-4 mt-2">
               Learn More
             </button>
           </div>
@@ -58,18 +63,18 @@ export default function Carousle() {
           />
 
           {/* content */}
-          <div className="absolute z-30 top-[8rem] left-20 flex flex-col text-white gap-4">
-            <span className="text-2xl tracking-wider">
+          <div className="absolute z-30 md:top-40 top-10 left-8 md:left-20 flex flex-col text-white gap-2  md:gap-4">
+            <span className="md:text-2xl text-xl tracking-wider">
               # We Created Leading Digital Products
             </span>
-            <h1 className="text-[5rem] leading-[5rem] tracking-wide font-archivo">
+            <h1 className="md:text-7xl text-3xl leading-[2.5rem] md:leading-[5rem] tracking-wide font-archivo">
               END TO END <br /> DEVELOPMENT
             </h1>
-            <p className="text-xl">
-              We are 100+ professional software engineer with more than 10 year+
-              experience.
+            <p className="text-sm w-72 md:w-auto  md:text-xl">
+              We are 100+ professional software engineers with more than 10
+              years of experience.
             </p>
-            <button className="px-2 py-3 hover:bg-purple transition-all text-white text-lg bg-bluelight w-36 mt-2">
+            <button className="px-4 py-2 hover:bg-purple transition-all text-white text-sm md:text-lg bg-bluelight w-32 md:w-36 md:mt-4 mt-2">
               Learn More
             </button>
           </div>
@@ -86,19 +91,18 @@ export default function Carousle() {
             className="w-full object-cover h-full"
           />
 
-          {/* content */}
-          <div className="absolute z-30 top-[8rem] left-20 flex flex-col text-white gap-4">
-            <span className="text-2xl tracking-wider">
-              # Only High Quality Services
+          <div className="absolute z-30 md:top-40 top-10 left-8 md:left-20 flex flex-col text-white gap-2  md:gap-4">
+            <span className="md:text-2xl text-xl tracking-wider">
+              # Best Quality
             </span>
-            <h1 className="text-[5rem] leading-[5rem] tracking-wide font-archivo">
+            <h1 className="md:text-7xl text-3xl leading-[2.5rem] md:leading-[5rem] tracking-wide font-archivo">
               SOFTWARE IT <br /> OUTSOURCING
             </h1>
-            <p className="text-xl">
-              We are 100+ professional software engineer with more than 10 year+
-              experience.
+            <p className="text-sm md:w-auto w-72 md:text-xl">
+              We are 100+ professional software engineers with more than 10
+              years of experience.
             </p>
-            <button className="px-2 py-3 hover:bg-purple transition-all text-white text-lg bg-bluelight w-36 mt-2">
+            <button className="px-4 py-2 hover:bg-purple transition-all text-white text-sm md:text-lg bg-bluelight w-32 md:w-36 md:mt-4 mt-2">
               Learn More
             </button>
           </div>
