@@ -28,13 +28,14 @@ export default function Carousle() {
             className="w-full object-cover h-full"
           />
 
-          <div className="absolute z-30 top-1/4 md:top-[8rem] left-10 md:left-20 flex flex-col text-white gap-4">
+          <div className="md:text-[5rem] text-3xl absolute z-30 top-1/4 md:top-[8rem] left-10 md:left-20 flex flex-col text-white gap-4">
             <span className="sm:text-lg md:text-2xl tracking-wider">
               # Full Cycle Development
             </span>
-            <h1 className="text-3xl md:text-[5rem] leading-[2.5rem] md:leading-[5rem] tracking-wide font-archivo">
+            <h1 className="text-3xl leading-[2.5rem] tracking-wide font-archivo md:text-[5rem] md:leading-[5rem]">
               FROM IDEA <br /> TO PRODUCT
             </h1>
+
             <p className="text-sm md:text-xl">
               We are 100+ professional software engineers with more than 10
               years of experience.
