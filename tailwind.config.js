@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       fontFamily: {
         roboto: ['Nunito Sans', 'serif'], // Add Google Font here
+        archivo: ["Archivo Black",'sans-serif']
       },
       colors:{
         darkblue:"#141d38",
