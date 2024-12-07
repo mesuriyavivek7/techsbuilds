@@ -32,7 +32,7 @@ export default function Carousle() {
             <span className="sm:text-lg md:text-2xl tracking-wider">
               # Full Cycle Development
             </span>
-            <h1 className="text-3xl leading-[2.5rem] tracking-wide font-archivo md:text-[5rem] md:leading-[5rem]">
+            <h1 className="text-3xl leading-[2.5rem] tracking-wide font-archivo md:text-7xl md:leading-[5rem]">
               FROM IDEA <br /> TO PRODUCT
             </h1>
 

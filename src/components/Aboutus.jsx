@@ -5,7 +5,6 @@ const Aboutus = () => {
   return (
     <div className="p-6">
       <div className="flex flex-col sm:flex-row  flex-wrap justify-start gap-20">
-        {/* Text Content */}
         <div className="ml-6 sm:ml-10 mt-10 flex flex-col max-w-lg">
           <p className="text-purple-600 font-extrabold text-xs">
             // ABOUT COMPANY
@@ -37,7 +36,6 @@ const Aboutus = () => {
           </div>
         </div>
 
-        {/* Image Section */}
         <div className="w-full md:w-1/3 sm:block sm:mt-16 sm:ml-6">
           <img src={image} alt="About Us" className="w-full h-auto shadow-md" />
           <button className="text-bluelight/80 text-sm font-bold mt-10 cursor-pointer hover:underline">
