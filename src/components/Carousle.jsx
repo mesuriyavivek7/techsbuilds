@@ -1,112 +1,174 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectFade, Autoplay } from "swiper/modules"; // Include Autoplay
-import "swiper/css";
-import "swiper/css/effect-fade";
+import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 
-// Importing images
-import IMG1 from "../assets/asset1.jpg";
-import IMG2 from "../assets/asset2.jpg";
-import IMG3 from "../assets/asset3.jpg";
+// Importing icons
+import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+import EmailIcon from "@mui/icons-material/Email";
 
-export default function Carousle() {
+export default function Navbar() {
+  const location = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const isActive = (currentPath) => location.pathname === currentPath;
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
   return (
-    <Swiper
-      modules={[EffectFade, Autoplay]} // Include Autoplay here
-      effect="fade"
-      spaceBetween={30}
-      slidesPerView={1}
-      loop={true}
-      autoplay={{ delay: 3000 }} // Works only with Autoplay module
-      className="mySwiper"
-    >
-      <SwiperSlide>
-        <div className="w-full md:h-[650px] relative">
-          <img
-            src={IMG1}
-            alt="Slide 1"
-            className="w-full object-cover h-full"
-          />
-
-          <div className="md:text-[5rem] text-3xl absolute z-30 top-1/4 md:top-[8rem] left-10 md:left-20 flex flex-col text-white gap-4">
-            <span className="sm:text-lg md:text-2xl tracking-wider">
-              # Full Cycle Development
-            </span>
-            <h1 className="text-3xl leading-[2.5rem] tracking-wide font-archivo md:text-7xl md:leading-[5rem]">
-              FROM IDEA <br /> TO PRODUCT
-            </h1>
-
-            <p className="text-sm md:text-xl">
-              We are 100+ professional software engineers with more than 10
-              years of experience.
-            </p>
-            <button className="px-4 py-2 hover:bg-purple transition-all text-white text-sm md:text-lg bg-bluelight w-32 md:w-36 mt-2">
-              Learn More
-            </button>
-          </div>
-
-          {/* Black Overlay */}
-          <div className="absolute z-20 inset-0 bg-black bg-opacity-50"></div>
+    <header className="relative z-50">
+      {/* Top Section */}
+      <div className="hidden md:flex bg-darkblue text-gray-300 justify-between md:justify-around items-center py-2">
+        <div className="flex items-center gap-4">
+          <FacebookOutlinedIcon className="hover:text-white cursor-pointer" />
+          <InstagramIcon className="hover:text-white cursor-pointer" />
+          <LinkedInIcon className="hover:text-white cursor-pointer" />
         </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="w-full md:h-[650px] relative">
-          <img
-            src={IMG2}
-            alt="Slide 2"
-            className="w-full object-cover h-full"
-          />
-
-          {/* content */}
-          <div className="absolute z-30 top-[8rem] left-20 flex flex-col text-white gap-4">
-            <span className="text-2xl tracking-wider">
-              # We Created Leading Digital Products
-            </span>
-            <h1 className="text-[5rem] leading-[5rem] tracking-wide font-archivo">
-              END TO END <br /> DEVELOPMENT
-            </h1>
-            <p className="text-xl">
-              We are 100+ professional software engineer with more than 10 year+
-              experience.
-            </p>
-            <button className="px-2 py-3 hover:bg-purple transition-all text-white text-lg bg-bluelight w-36 mt-2">
-              Learn More
-            </button>
-          </div>
-
-          {/* Black Overlay */}
-          <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div className="flex items-center gap-6">
+          <a
+            href="tel:+917874510328"
+            className="flex items-center gap-2 hover:text-white"
+          >
+            <LocalPhoneIcon />
+            <span>+91-7874510328</span>
+          </a>
+          <a
+            href="mailto:techsbuilds@gmail.com"
+            className="flex items-center gap-2 hover:text-white"
+          >
+            <EmailIcon />
+            <span>techsbuilds@gmail.com</span>
+          </a>
         </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="w-full md:h-[650px] relative">
-          <img
-            src={IMG3}
-            alt="Slide 3"
-            className="w-full object-cover h-full"
-          />
+      </div>
 
-          {/* content */}
-          <div className="absolute z-30 top-[8rem] left-20 flex flex-col text-white gap-4">
-            <span className="text-2xl tracking-wider">
-              # Only High Quality Services
-            </span>
-            <h1 className="text-[5rem] leading-[5rem] tracking-wide font-archivo">
-              SOFTWARE IT <br /> OUTSOURCING
-            </h1>
-            <p className="text-xl">
-              We are 100+ professional software engineer with more than 10 year+
-              experience.
-            </p>
-            <button className="px-2 py-3 hover:bg-purple transition-all text-white text-lg bg-bluelight w-36 mt-2">
-              Learn More
-            </button>
-          </div>
-
-          {/* Black Overlay */}
-          <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+      {/* Navbar Section */}
+      <div className="flex items-center md:justify-around px-4 justify-between py-4 bg-white shadow-md">
+        <div className="text-2xl font-bold text-darkblue cursor-pointer">
+          TechsBuilds
         </div>
-      </SwiperSlide>
-    </Swiper>
+
+        {/* Hamburger Menu */}
+        <button
+          onClick={toggleMenu}
+          className={`${
+            isMenuOpen ? "absolute z-50 text-white top-3 right-2" : "text-2xl"
+          } md:hidden`}
+        >
+          {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
+        </button>
+
+        {/* Desktop Menu */}
+        <nav className="hidden md:flex h-12 items-center gap-10">
+          <div
+            onClick={() => navigate("/")}
+            className={`cursor-pointer font-medium ${
+              isActive("/") && "text-bluelight border-b-2 border-bluelight"
+            } hover:text-bluelight`}
+          >
+            Home
+          </div>
+          <div
+            onClick={() => navigate("/company")}
+            className={`cursor-pointer font-medium ${
+              isActive("/company") &&
+              "text-bluelight border-b-2 border-bluelight"
+            } hover:text-bluelight`}
+          >
+            Services
+          </div>
+          <div
+            onClick={() => navigate("/about-us")}
+            className={`cursor-pointer font-medium ${
+              isActive("/about-us") &&
+              "text-bluelight border-b-2 border-bluelight"
+            } hover:text-bluelight`}
+          >
+            About Us
+          </div>
+          <div
+            onClick={() => navigate("/contacts")}
+            className={`cursor-pointer font-medium ${
+              isActive("/contacts") &&
+              "text-bluelight border-b-2 border-bluelight"
+            } hover:text-bluelight`}
+          >
+            Contacts
+          </div>
+          <button className="px-6 py-2 text-white bg-bluelight rounded-md shadow hover:bg-purple transition">
+            Get In Touch
+          </button>
+        </nav>
+      </div>
+
+      {/* Mobile Menu */}
+      <div
+        className={`fixed pt-2 top-0 right-0 h-screen w-2/3 bg-darkblue text-white z-40 transition-transform transform ${
+          isMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="py-2 px-4">
+          <div
+            onClick={() => {
+              navigate("/");
+              setIsMenuOpen(false);
+            }}
+            className={`${
+              isActive("/") ? "text-bluelight" : ""
+            } hover:text-bluelight cursor-pointer`}
+          >
+            Home
+          </div>
+        </div>
+        <div className="py-2 px-4">
+          <div
+            onClick={() => {
+              navigate("/services");
+              setIsMenuOpen(false);
+            }}
+            className={`${
+              isActive("/services") ? "text-bluelight" : ""
+            } hover:text-bluelight cursor-pointer`}
+          >
+            Services
+          </div>
+        </div>
+        <div className="py-2 px-4">
+          <div
+            onClick={() => {
+              navigate("/about-us");
+              setIsMenuOpen(false);
+            }}
+            className={`${
+              isActive("/about-us") ? "text-bluelight" : ""
+            } hover:text-bluelight cursor-pointer`}
+          >
+            About Us
+          </div>
+        </div>
+        <div className="py-2 px-4">
+          <div
+            onClick={() => {
+              navigate("/contacts");
+              setIsMenuOpen(false);
+            }}
+            className={`${
+              isActive("/contacts") ? "text-bluelight" : ""
+            } hover:text-bluelight cursor-pointer`}
+          >
+            Contacts
+          </div>
+        </div>
+        <div className="py-2 px-4">
+          <button className="p-2 w-full text-center transition-all bg-bluelight font-semibold hover:bg-purple text-white rounded-md">
+            Get In Touch
+          </button>
+        </div>
+      </div>
+    </header>
   );
 }
