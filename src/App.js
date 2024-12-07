@@ -1,4 +1,3 @@
-import './App.css';
 import { createBrowserRouter, RouterProvider, Outlet} from "react-router-dom";
 
 //importing components
@@ -27,9 +26,18 @@ function App() {
         {
           path:'/',
           element:<Home></Home>
+        },{
+          path:'/company',
+          element:<Home></Home>
+        },{
+          path:'/about-us',
+          element:<Home></Home>
+        },{
+          path:'/contacts',
+          element:<Home></Home>
         },
       ]
-    }
+    },
   ])
 
   return (
