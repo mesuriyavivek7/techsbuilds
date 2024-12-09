@@ -3,7 +3,7 @@ import image from "../assets/web-dev-icon.png";
 
 const Services = () => {
   return (
-    <div className="mt-8 w-full px-4 sm:px-8 md:px-16 mb-5">
+    <div className="w-full px-4 sm:px-8 md:px-16 my-12">
       <div className="flex flex-col text-start">
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between">
