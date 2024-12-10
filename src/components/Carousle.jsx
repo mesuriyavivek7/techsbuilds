@@ -34,11 +34,11 @@ export default function Carousle() {
               initial={{ opacity: 0, y: 20 }} // Start hidden and slightly below
               animate={{ opacity: 1, y: 0 }} // Fade in and slide up
               transition={{ duration: 0.5 }} // Control the speed
-              className="md:text-2xl text-xl tracking-wider"
+              className="md:text-2xl text-lg tracking-wider"
             >
               # Full Cycle Development
             </motion.span>
-            <h1 className="md:text-7xl text-3xl leading-[2.5rem] md:leading-[5rem] tracking-wide font-archivo">
+            <h1 className="md:text-7xl text-2xl leading-[2.5rem] md:leading-[5rem] tracking-wide font-archivo">
               FROM IDEA <br /> TO PRODUCT
             </h1>
             <p className="text-sm w-72 md:w-auto md:text-xl">
@@ -64,10 +64,10 @@ export default function Carousle() {
 
           {/* content */}
           <div className="absolute z-30 md:top-40 top-10 left-8 md:left-20 flex flex-col text-white gap-2  md:gap-4">
-            <span className="md:text-2xl text-xl tracking-wider">
+            <span className="md:text-2xl text-lg tracking-wider">
               # We Created Leading Digital Products
             </span>
-            <h1 className="md:text-7xl text-3xl leading-[2.5rem] md:leading-[5rem] tracking-wide font-archivo">
+            <h1 className="md:text-7xl text-2xl leading-[2.5rem] md:leading-[5rem] tracking-wide font-archivo">
               END TO END <br /> DEVELOPMENT
             </h1>
             <p className="text-sm w-72 md:w-auto  md:text-xl">
@@ -92,10 +92,10 @@ export default function Carousle() {
           />
 
           <div className="absolute z-30 md:top-40 top-10 left-8 md:left-20 flex flex-col text-white gap-2  md:gap-4">
-            <span className="md:text-2xl text-xl tracking-wider">
+            <span className="md:text-2xl text-lg tracking-wider">
               # Best Quality
             </span>
-            <h1 className="md:text-7xl text-3xl leading-[2.5rem] md:leading-[5rem] tracking-wide font-archivo">
+            <h1 className="md:text-7xl text-2xl leading-[2.5rem] md:leading-[5rem] tracking-wide font-archivo">
               SOFTWARE IT <br /> OUTSOURCING
             </h1>
             <p className="text-sm md:w-auto w-72 md:text-xl">
