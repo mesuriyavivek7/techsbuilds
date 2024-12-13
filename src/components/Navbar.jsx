@@ -48,7 +48,10 @@ export default function Navbar() {
 
       {/* Navbar Section */}
       <div className="flex items-center md:justify-around px-4 justify-between py-4 bg-white shadow-md">
-        <div className="text-2xl font-bold text-darkblue cursor-pointer">
+        <div onClick={()=>{
+          navigate('/')
+          setIsMenuOpen(false)
+        }} className="text-2xl font-bold text-darkblue cursor-pointer">
           TechsBuilds
         </div>
 
@@ -73,9 +76,9 @@ export default function Navbar() {
             Home
           </div>
           <div
-            onClick={() => navigate("/company")}
+            onClick={() => navigate("/services")}
             className={`cursor-pointer font-medium ${
-              isActive("/company") &&
+              isActive("/services") &&
               "text-bluelight border-b-2 border-bluelight"
             } hover:text-bluelight`}
           >
@@ -99,7 +102,7 @@ export default function Navbar() {
           >
             Contacts
           </div>
-          <button className="px-6 py-2 text-white bg-bluelight rounded-md shadow hover:bg-purple transition">
+          <button onClick={()=> navigate("/contacts")} className="px-6 py-2 text-white bg-bluelight rounded-md shadow hover:bg-purple transition">
             Get In Touch
           </button>
         </nav>
@@ -163,7 +166,10 @@ export default function Navbar() {
             Contacts
           </div>
         </div>
-        <div className="py-2 px-4">
+        <div onClick={()=>{
+          navigate("/contacts")
+          setIsMenuOpen(false)
+        }} className="py-2 px-4">
           <button className="p-2 w-full text-center transition-all bg-bluelight font-semibold hover:bg-purple text-white rounded-md">
             Get In Touch
           </button>
