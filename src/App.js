@@ -5,7 +5,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from "./pages/About";
-
+import Contact from "./pages/Contact";
+import Services from "./pages/Services";
 
 function App() {
 
@@ -28,14 +29,14 @@ function App() {
           path:'/',
           element:<Home></Home>
         },{
-          path:'/company',
-          element:<Home></Home>
+          path:'/services',
+          element:<Services></Services>
         },{
           path:'/about-us',
           element:<About></About>
         },{
           path:'/contacts',
-          element:<Home></Home>
+          element:<Contact></Contact>
         },
       ]
     },
