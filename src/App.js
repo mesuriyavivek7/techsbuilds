@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider, Outlet} from "react-router-dom";
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
+import About from "./pages/About";
 
 
 function App() {
@@ -31,7 +32,7 @@ function App() {
           element:<Home></Home>
         },{
           path:'/about-us',
-          element:<Home></Home>
+          element:<About></About>
         },{
           path:'/contacts',
           element:<Home></Home>
