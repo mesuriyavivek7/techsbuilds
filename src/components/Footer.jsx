@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import image from "../assets/earth.png";
 
@@ -24,7 +25,7 @@ export default function Footer() {
               className="w-10 h-10 sm:w-12 sm:h-12"
               alt="Company Address Icon"
             />
-            <p className="text-xs sm:text-sm">123 Tech Street, BuildCity</p>
+            <p className="text-xs sm:text-sm">521 Navratna Corporate Park, Ashok Vatika, Bopal-Ambali Road, Ahmedabad - 380058.</p>
             <p className="font-semibold text-sm sm:text-base">Our Address</p>
           </div>
   
@@ -34,7 +35,7 @@ export default function Footer() {
               className="w-10 h-10 sm:w-12 sm:h-12"
               alt="Email Icon"
             />
-            <p className="text-xs sm:text-sm">contact@techsbuilds.com</p>
+            <p className="text-xs sm:text-sm">techsbuilds@gmail.com</p>
             <p className="font-semibold text-sm sm:text-base">Our Mailbox</p>
           </div>
   
@@ -44,7 +45,7 @@ export default function Footer() {
               className="w-10 h-10 sm:w-12 sm:h-12"
               alt="Phone Icon"
             />
-            <p className="text-xs sm:text-sm">+1 (234) 567-890</p>
+            <p className="text-xs sm:text-sm">+ 7874510328</p>
             <p className="font-semibold text-sm sm:text-base">Our Phone</p>
           </div>
         </div>
@@ -59,21 +60,26 @@ export default function Footer() {
         {/* Navigation Links */}
         <div className="mt-6 sm:mt-16">
           <div className="hidden sm:flex sm:gap-6 sm:text-white sm:font-semibold sm:text-sm lg:text-lg">
-            <a href="##" className="hover:underline">
+            <Link to={'/'}>
+             <span className="hover:underline">
               Home
-            </a>
-            <a href="##" className="hover:underline">
-              Services
-            </a>
-            <a href="##" className="hover:underline">
-              Portfolio
-            </a>
-            <a href="##" className="hover:underline">
-              Blog
-            </a>
-            <a href="##" className="hover:underline">
+             </span>
+            </Link>
+            <Link to={'/services'}>
+             <span className="hover:underline">
+               Services
+             </span>
+            </Link>
+            <Link to={'/about-us'}>
+            <span className="hover:underline">
+              About Us
+            </span>
+            </Link>
+            <Link to={'/contacts'}>
+            <span className="hover:underline">
               Contacts
-            </a>
+            </span>
+            </Link>
           </div>
         </div>
   
