@@ -11,7 +11,7 @@ const Aboutus = () => {
       <div className="flex flex-col sm:flex-row items-start gap-16">
         <div className="flex-1 flex flex-col gap-4">
           <p className="text-purple-600 font-extrabold text-sm md:text-base">
-            // ABOUT COMPANY
+            # ABOUT COMPANY
           </p>
           <h2 className="font-extrabold md:text-4xl text-3xl mb-2">
             Your Partner for <br></br> Software Inovation
