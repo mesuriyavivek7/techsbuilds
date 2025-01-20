@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 //Import Icons
 import REACT from '../assets/react.png'
@@ -20,7 +21,7 @@ export default function About() {
     <div className="flex m-auto items-center justify-around  bg-cover w-full h-[180px] md:h-[300px] bg-center bg-[url('https://res.cloudinary.com/djxavfpqc/image/upload/v1734009426/pexels-rquiros-2330137_sqixd3.jpg')]">
          <h1 className='text-white text-3xl md:text-4xl font-black'>About Us</h1>
          <div className='flex items-center gap-1'>
-             <span className='text-gray-400 md:text-base text-sm font-bold'>HOME</span>
+             <Link to={'/'}><span className='text-gray-400 md:text-base text-sm font-bold'>HOME</span></Link>
              <span className='text-bluelight'><ArrowRightIcon style={{fontSize:"1.8rem"}}></ArrowRightIcon></span>
              <span className='font-bold text-white'>ABOUT US</span>
          </div>

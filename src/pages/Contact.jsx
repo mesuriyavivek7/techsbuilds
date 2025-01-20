@@ -5,6 +5,7 @@ import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import { Link } from 'react-router-dom';
 
 export default function Contact() {
   return (
@@ -12,7 +13,7 @@ export default function Contact() {
        <div className="flex m-auto items-center justify-around  bg-cover w-full h-[180px] md:h-[300px] bg-center bg-[url('https://res.cloudinary.com/djxavfpqc/image/upload/v1734104989/pexels-shvets-production-8037008_umx1mw.jpg')]">
          <h1 className='text-white text-3xl md:text-4xl font-black'>Contact Us</h1>
          <div className='flex items-center gap-1'>
-             <span className='text-gray-400 md:text-base text-sm font-bold'>HOME</span>
+             <Link to={'/'}><span className='text-gray-400 md:text-base text-sm font-bold'>HOME</span></Link>
              <span className='text-bluelight'><ArrowRightIcon style={{fontSize:"1.8rem"}}></ArrowRightIcon></span>
              <span className='font-bold text-white'>Contact US</span>
          </div>
@@ -27,7 +28,7 @@ export default function Contact() {
                     <span className='text-slate-500'><LocationOnIcon style={{fontSize:'2.2rem'}}></LocationOnIcon></span>
                     <div className='flex flex-col gap-1.5'>
                         <span className='font-bold text-lg'>Our Address:</span>
-                        <span>411 University St, Seattle, USA</span>
+                        <span>521 Navratna Corporate Park, Ashok Vatika, Bopal-Ambali Road, Ahmedabad - 380058.</span>
                     </div>
                  </div>
                  <div className='p-4 flex items-center gap-3'>
