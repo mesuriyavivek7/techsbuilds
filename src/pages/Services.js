@@ -2,6 +2,11 @@ import React from 'react'
 import image from "../assets/web-dev-icon.png";
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import { Link } from 'react-router-dom';
+import ANDROID from '../assets/android (1).png'
+import DESIGN from '../assets/design.png'
+import ITSERVICE from '../assets/it-service.png'
+import SERVER from '../assets/servers.png'
+import DEDICATE from '../assets/laptop (1).png'
 
 export default function Services() {
   return (
@@ -35,18 +40,17 @@ export default function Services() {
         </h1>
       </div>
 
-      {/* Services Grid */}
-      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+ {/* Services Grid */}
+ <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* Service Card */}
         <div className="flex p-6 shadow-lg rounded-lg bg-white">
           <div>
-            <img src={image} width={100} alt="Service Icon" />
+            <img src={image} className="w-20" alt="Service Icon" />
           </div>
           <div className="ml-6">
             <p className="font-bold text-xl">Web Development</p>
             <p className="text-gray-700 text-base mt-3">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-              ex deserunt, accusamus voluptate quos ullam.
+            Modern web development using the latest technologies like React, Node.js & more.
             </p>
           </div>
         </div>
@@ -54,13 +58,12 @@ export default function Services() {
         {/* Service Card */}
         <div className="flex p-6 shadow-lg rounded-lg bg-white">
           <div>
-            <img src={image} width={100} alt="Service Icon" />
+            <img src={ANDROID} className="w-20" alt="Service Icon" />
           </div>
           <div className="ml-6">
             <p className="font-bold text-xl">Mobile Development</p>
             <p className="text-gray-700 text-base mt-3">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-              ex deserunt, accusamus voluptate quos ullam.
+            We build fast, user-friendly mobile apps for iOS and Android to help your business grow.
             </p>
           </div>
         </div>
@@ -68,13 +71,12 @@ export default function Services() {
         {/* Service Card */}
         <div className="flex p-6 shadow-lg rounded-lg bg-white">
           <div>
-            <img src={image} width={100} alt="Service Icon" />
+            <img src={DESIGN} className="w-20" alt="Service Icon" />
           </div>
           <div className="ml-6">
             <p className="font-bold text-xl">UI/UX Design</p>
             <p className="text-gray-700 text-base mt-3">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-              ex deserunt, accusamus voluptate quos ullam.
+            We design intuitive, responsive interfaces that enhance user experience and engagement.
             </p>
           </div>
         </div>
@@ -82,43 +84,41 @@ export default function Services() {
         {/* Additional cards */}
         <div className="flex p-6 shadow-lg rounded-lg bg-white">
           <div>
-            <img src={image} width={100} alt="Service Icon" />
+            <img src={DEDICATE} className="w-20" alt="Service Icon" />
           </div>
           <div className="ml-6">
             <p className="font-bold text-xl">QA & Testing</p>
             <p className="text-gray-700 text-base mt-3">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-              ex deserunt, accusamus voluptate quos ullam.
+            We ensure bug-free, reliable performance through rigorous testing and quality checks.
             </p>
           </div>
         </div>
 
         <div className="flex p-6 shadow-lg rounded-lg bg-white">
           <div>
-            <img src={image} width={100} alt="Service Icon" />
+            <img src={ITSERVICE} className="w-20" alt="Service Icon" />
           </div>
           <div className="ml-6">
             <p className="font-bold text-xl">IT Consultancy</p>
             <p className="text-gray-700 text-base mt-3">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-              ex deserunt, accusamus voluptate quos ullam.
+            Expert guidance to help you plan, optimize, and scale your IT solutions effectively.
             </p>
           </div>
         </div>
 
         <div className="flex p-6 shadow-lg rounded-lg bg-white">
           <div>
-            <img src={image} width={100} alt="Service Icon" />
+            <img src={SERVER} className="w-20" alt="Service Icon" />
           </div>
           <div className="ml-6">
-            <p className="font-bold text-xl">Dedicated</p>
+            <p className="font-bold text-xl">Dedicated Servers</p>
             <p className="text-gray-700 text-base mt-3">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-              ex deserunt, accusamus voluptate quos ullam.
+            Powerful, secure, and fully managed servers tailored to your business needs.
             </p>
           </div>
         </div>
       </div>
+      
     </div>
     </>
   )
