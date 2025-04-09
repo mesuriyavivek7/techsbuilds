@@ -10,6 +10,8 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
 
+import LOGO from '../assets/logo.png'
+
 export default function Navbar() {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -48,10 +50,14 @@ export default function Navbar() {
 
       {/* Navbar Section */}
       <div className="flex items-center md:justify-around px-4 justify-between py-4 bg-white shadow-md">
+      
         <div onClick={()=>{
           navigate('/')
           setIsMenuOpen(false)
-        }} className="text-2xl font-bold text-darkblue cursor-pointer">
+        }} className="text-2xl flex items-center gap-2 font-bold text-darkblue cursor-pointer">
+          <div className="p-1 bg-black">
+            <img src={LOGO} className="w-12 h-10"></img>
+          </div>
           TechsBuilds
         </div>
 

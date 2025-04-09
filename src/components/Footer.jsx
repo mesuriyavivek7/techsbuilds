@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import image from "../assets/earth.png";
+import LOCATION from '../assets/location.png'
+import PHONE from '../assets/telephone.png'
+import MAIL from '../assets/mail.png'
 
 // Importing icons
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
@@ -21,7 +23,7 @@ export default function Footer() {
         <div className="flex flex-wrap justify-evenly gap-8 sm:gap-24 text-white w-full px-4 sm:px-10 sm:mt-6">
           <div className="flex flex-col items-center text-center gap-3 max-w-[200px]">
             <img
-              src={image}
+              src={LOCATION}
               className="w-10 h-10 sm:w-12 sm:h-12"
               alt="Company Address Icon"
             />
@@ -31,7 +33,7 @@ export default function Footer() {
   
           <div className="flex flex-col items-center text-center gap-3 max-w-[200px]">
             <img
-              src={image}
+              src={MAIL}
               className="w-10 h-10 sm:w-12 sm:h-12"
               alt="Email Icon"
             />
@@ -41,11 +43,11 @@ export default function Footer() {
   
           <div className="flex flex-col items-center text-center gap-3 max-w-[200px]">
             <img
-              src={image}
+              src={PHONE}
               className="w-10 h-10 sm:w-12 sm:h-12"
               alt="Phone Icon"
             />
-            <p className="text-xs sm:text-sm">+ 7874510328</p>
+            <p className="text-xs sm:text-sm">+91-7874510328</p>
             <p className="font-semibold text-sm sm:text-base">Our Phone</p>
           </div>
         </div>

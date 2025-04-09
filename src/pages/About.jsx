@@ -31,8 +31,8 @@ export default function About() {
            <div className='md:flex-1 flex flex-col gap-4'>
               <span className='text-purple font-bold'># WHAT WE OFFER</span>
               <h1 className='text-4xl font-black'>Your Partner for <br></br> Software Innovation</h1>
-              <p className='text-base leading-7 text-gray-500 font-sans'>Engitech is the partner of choice for many of the world’s leading enterprises, SMEs and technology challengers. We help businesses elevate their value through custom software development, product design, QA and consultancy services.</p>
-              <span className='font-bold text-lg italic'>We can help to maintain and modernize your IT infrastructure and solve various infrastructure-specific issues a business may face.</span>
+              <p className='text-base leading-7 text-gray-500 font-sans'>TechsBuilds is the trusted partner for startups, SMEs, and enterprises looking to innovate and scale. </p>
+              <span className='font-bold text-lg italic'>We empower businesses by delivering tailored software solutions, robust QA services, expert IT consultancy, and smart product development that drive real value.</span>
            </div>
            <div className='md:flex-1 h-[300px]  md:h-[450px] flex flex-col gap-4'>
                <div className='w-full h-1/2 flex place-content-end'>
@@ -98,15 +98,15 @@ export default function About() {
           <h1 className='text-center md:tracking-wide text-3xl md:text-4xl font-extrabold'>This Is Why Industry Our Team Is So <br></br> Famous!</h1>
           <div className='w-full mt-8 flex items-center justify-around'>
               <div className='flex flex-col gap-2 items-center'>
-                 <h1 className='text-blue-600 font-medium text-3xl md:text-4xl font-archivo'>24+</h1>
-                 <span className='text-sm md:text-lg'>Awards Won</span>
+                 <h1 className='text-blue-600 font-medium text-3xl md:text-4xl font-archivo'>15+</h1>
+                 <span className='text-sm md:text-lg'>Projects Completed</span>
               </div>
               <div className='flex flex-col gap-2 items-center'>
-                 <h1 className='text-blue-600 font-medium text-3xl md:text-4xl font-archivo'>12+</h1>
+                 <h1 className='text-blue-600 font-medium text-3xl md:text-4xl font-archivo'>2+</h1>
                  <span className='text-sm md:text-lg'>Years Experience</span>
               </div>
               <div className='flex flex-col gap-2 items-center'>
-                 <h1 className='text-blue-600 font-medium text-3xl md:text-4xl font-archivo'>352+</h1>
+                 <h1 className='text-blue-600 font-medium text-3xl md:text-4xl font-archivo'>10+</h1>
                  <span className='text-sm md:text-lg'>Happy Clients</span>
               </div>
           </div>
